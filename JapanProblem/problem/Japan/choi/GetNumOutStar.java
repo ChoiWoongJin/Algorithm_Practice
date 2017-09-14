@@ -18,7 +18,8 @@ public class GetNumOutStar {
         for(int i=0; i<num; i++) {
             sb.append("*");
         }        
-        
+        sc.close();
+
         System.out.println(sb.toString());
     }
 }

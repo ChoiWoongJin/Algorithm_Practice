@@ -24,6 +24,8 @@ public class IdolDream {
         int M = Integer.parseInt(sc.next()); // 공연 수
         if(N == 0 || M == 0) { // 공연이나 손님이 0인 경우 종료
             System.out.println("0");
+            sc.close();
+
             return;
         }
         
@@ -41,6 +43,7 @@ public class IdolDream {
         }
         
         System.out.println(result);
+        sc.close();
     }
 }
 

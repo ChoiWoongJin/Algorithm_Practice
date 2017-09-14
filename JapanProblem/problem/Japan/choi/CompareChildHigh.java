@@ -58,7 +58,7 @@ public class CompareChildHigh {
                }
            }
        }
-       
+       sc.close();
        System.out.println(ge1 + " " + le1);          
    }
 }

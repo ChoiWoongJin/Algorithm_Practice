@@ -33,6 +33,7 @@ public class GetStringChangeIt {
 	    	 }
 	     }  
 	     System.out.println(result);
+	     sc.close();
 
 	}
 
