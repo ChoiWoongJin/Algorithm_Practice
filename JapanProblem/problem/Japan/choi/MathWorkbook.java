@@ -8,8 +8,50 @@ import java.util.*;
  * 숫자일 경우 a + b = / b + a = 는 서로 다른 문제이다.
  * 
  */
-
 public class MathWorkbook {
+
+	public static void main(String[] args) {
+		// 自分の得意な言語で
+		// Let's チャレンジ！！
+
+		Scanner sc = new Scanner(System.in);
+		int p = Integer.parseInt(sc.next());
+		int m = Integer.parseInt(sc.next());
+		int preNum = 0, postNum = 0;
+		int[][] checkP = new int[100][100];
+		int[][] checkM = new int[100][100];
+		Random r = new Random();
+
+		while (0 < p || 0 < m) {
+			preNum = r.nextInt(100); // 0~99
+			postNum = r.nextInt(100); // 0~99
+			
+			 if(checkP[preNum][postNum] != 1) { // 중복이 아닐 때
+    			 if(0 < p) {
+    			     if(preNum + postNum < 100) { // 플러스 값을 충족
+    			        checkP[preNum][postNum] = 1;
+        				System.out.println(preNum + " + " + postNum + " =");
+        				p--;
+    			     }
+    			 }
+			 }
+			 
+			 preNum = r.nextInt(100); // 0~99
+			 postNum = r.nextInt(100); // 0~99
+			 if(checkM[preNum][postNum] != 1) { // 중복이 아닐 때
+    		    if(0 < m) {
+    			     if(preNum - postNum >= 0) { // 마이너스 값을 충족
+    			        checkM[preNum][postNum] = 1;
+            			System.out.println(preNum + " - " + postNum + " =");
+            			m--;
+    			     }
+    			 }
+			 }
+		}
+	}
+}
+
+/*public class MathWorkbook {
 
 	public static void main(String[] args) {
 		// 自分の得意な言語で
@@ -43,7 +85,7 @@ public class MathWorkbook {
 			}
 		}
 	}
-}
+}*/
 
 /*
  * public class MathWorkbook {
