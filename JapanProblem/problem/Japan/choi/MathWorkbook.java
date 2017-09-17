@@ -8,7 +8,52 @@ import java.util.*;
  * 숫자일 경우 a + b = / b + a = 는 서로 다른 문제이다.
  * 
  */
+
 public class MathWorkbook {
+
+	public static void makePM(int p, int m) {
+		int preNum = 0, postNum = 0, checkP = 0, checkM = 0;
+		int[][] check = new int[100][100];
+		Random r = new Random();
+		
+		for(int i=0; i<100; i++) {
+		    for(int j=0; j<100; j++) {
+		        check[i][j] = 0;
+		    }
+		}
+
+		while (checkP < p || checkM < m) {
+			preNum = r.nextInt(100); // 0~99
+			postNum = r.nextInt(100); // 0~99
+            if(checkP < p && preNum + postNum < 100 && check[preNum][postNum] == 0) { // 플러스 값을 충족, 중복이 아닐 때
+				check[preNum][postNum] = 1;
+				System.out.println(preNum + " + " + postNum + " =");
+				checkP++;
+            }
+			
+			preNum = r.nextInt(100); // 0~99
+			postNum = r.nextInt(100); // 0~99
+			if(checkM < m && preNum - postNum >= 0 && check[preNum][postNum] == 0) { // 마이너스 값을 충족, 중복이 아닐 때
+    			check[preNum][postNum] = 1;
+    			System.out.println(preNum + " - " + postNum + " =");
+    			checkM++;
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		// 自分の得意な言語で
+		// Let's チャレンジ！！
+
+		Scanner sc = new Scanner(System.in);
+		int p = Integer.parseInt(sc.next());
+		int m = Integer.parseInt(sc.next());
+
+		makePM(p, m);
+	}
+}
+
+/*public class MathWorkbook {
 
 	public static void makePM(int p, int m) {
 		Map<Integer, Integer> hm = new HashMap<Integer, Integer>();
@@ -53,4 +98,4 @@ public class MathWorkbook {
 
 		makePM(p, m);
 	}
-}
+}*/
