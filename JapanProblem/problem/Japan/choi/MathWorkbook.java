@@ -11,91 +11,67 @@ import java.util.*;
 
 public class MathWorkbook {
 
-	public static void makePM(int p, int m) {
+	public static void main(String[] args) {
+		// 自分の得意な言語で
+		// Let's チャレンジ！！
+
+		Scanner sc = new Scanner(System.in);
+		int p = Integer.parseInt(sc.next());
+		int m = Integer.parseInt(sc.next());
 		int preNum = 0, postNum = 0, checkP = 0, checkM = 0;
 		int[][] check = new int[100][100];
 		Random r = new Random();
-		
-		for(int i=0; i<100; i++) {
-		    for(int j=0; j<100; j++) {
-		        check[i][j] = 0;
-		    }
-		}
 
 		while (checkP < p || checkM < m) {
 			preNum = r.nextInt(100); // 0~99
 			postNum = r.nextInt(100); // 0~99
-            if(checkP < p && preNum + postNum < 100 && check[preNum][postNum] == 0) { // 플러스 값을 충족, 중복이 아닐 때
-				check[preNum][postNum] = 1;
-				System.out.println(preNum + " + " + postNum + " =");
-				checkP++;
-            }
-			
-			preNum = r.nextInt(100); // 0~99
-			postNum = r.nextInt(100); // 0~99
-			if(checkM < m && preNum - postNum >= 0 && check[preNum][postNum] == 0) { // 마이너스 값을 충족, 중복이 아닐 때
-    			check[preNum][postNum] = 1;
-    			System.out.println(preNum + " - " + postNum + " =");
-    			checkM++;
+
+			if (check[preNum][postNum] != 1) { // 중복이 아닐 때
+				if (checkP < p) {
+					if (preNum + postNum < 100) { // 플러스 값을 충족
+						check[preNum][postNum] = 1;
+						System.out.println(preNum + " + " + postNum + " =");
+						checkP++;
+					}
+				} else if (checkM < m) {
+					if (preNum - postNum >= 0) { // 마이너스 값을 충족
+						check[preNum][postNum] = 1;
+						System.out.println(preNum + " - " + postNum + " =");
+						checkM++;
+					}
+				}
 			}
 		}
-	}
-
-	public static void main(String[] args) {
-		// 自分の得意な言語で
-		// Let's チャレンジ！！
-
-		Scanner sc = new Scanner(System.in);
-		int p = Integer.parseInt(sc.next());
-		int m = Integer.parseInt(sc.next());
-
-		makePM(p, m);
 	}
 }
 
-/*public class MathWorkbook {
-
-	public static void makePM(int p, int m) {
-		Map<Integer, Integer> hm = new HashMap<Integer, Integer>();
-		int preNum = 0, postNum = 0, checkP = 0, checkM = 0;
-		Random r = new Random();
-
-		while (checkP < p || checkM < m) {
-			preNum = r.nextInt(100); // 0~99
-			postNum = r.nextInt(100); // 0~99
-
-			if (preNum + postNum < 100 && checkP < p) { // 플러스의 경우를 충족시킬 때
-				if (hm.containsKey(preNum) == true && hm.get(preNum) != postNum) { // 키는 같지만 값은 같지 않을 때
-					hm.put(preNum, postNum);
-					System.out.println(preNum + " + " + postNum + " =");
-					checkP++;
-				} else if (hm.containsKey(preNum) == false) { // 처음부터 다를 때, 바로 넣어 주자
-					hm.put(preNum, postNum);
-					System.out.println(preNum + " + " + postNum + " =");
-					checkP++;
-				}
-			} else if (preNum - postNum >= 0 && checkM < m) { // 마이너스의 경우를 충족시킬 때
-				if (hm.containsKey(preNum) == true && hm.get(preNum) != postNum) { // 키는 같지만 값은 같지 않을 때
-					hm.put(preNum, postNum);
-					System.out.println(preNum + " - " + postNum + " =");
-					checkM++;
-				} else if (hm.containsKey(preNum) == false) { // 처음부터 다를 때, 바로 넣어 주자
-					hm.put(preNum, postNum);
-					System.out.println(preNum + " - " + postNum + " =");
-					checkM++;
-				}
-			}
-		}
-	}
-
-	public static void main(String[] args) {
-		// 自分の得意な言語で
-		// Let's チャレンジ！！
-
-		Scanner sc = new Scanner(System.in);
-		int p = Integer.parseInt(sc.next());
-		int m = Integer.parseInt(sc.next());
-
-		makePM(p, m);
-	}
-}*/
+/*
+ * public class MathWorkbook {
+ * 
+ * public static void makePM(int p, int m) { Map<Integer, Integer> hm = new
+ * HashMap<Integer, Integer>(); int preNum = 0, postNum = 0, checkP = 0, checkM
+ * = 0; Random r = new Random();
+ * 
+ * while (checkP < p || checkM < m) { preNum = r.nextInt(100); // 0~99 postNum =
+ * r.nextInt(100); // 0~99
+ * 
+ * if (preNum + postNum < 100 && checkP < p) { // 플러스의 경우를 충족시킬 때 if
+ * (hm.containsKey(preNum) == true && hm.get(preNum) != postNum) { // 키는 같지만 값은
+ * 같지 않을 때 hm.put(preNum, postNum); System.out.println(preNum + " + " + postNum
+ * + " ="); checkP++; } else if (hm.containsKey(preNum) == false) { // 처음부터 다를
+ * 때, 바로 넣어 주자 hm.put(preNum, postNum); System.out.println(preNum + " + " +
+ * postNum + " ="); checkP++; } } else if (preNum - postNum >= 0 && checkM < m)
+ * { // 마이너스의 경우를 충족시킬 때 if (hm.containsKey(preNum) == true && hm.get(preNum) !=
+ * postNum) { // 키는 같지만 값은 같지 않을 때 hm.put(preNum, postNum);
+ * System.out.println(preNum + " - " + postNum + " ="); checkM++; } else if
+ * (hm.containsKey(preNum) == false) { // 처음부터 다를 때, 바로 넣어 주자 hm.put(preNum,
+ * postNum); System.out.println(preNum + " - " + postNum + " ="); checkM++; } }
+ * } }
+ * 
+ * public static void main(String[] args) { // 自分の得意な言語で // Let's チャレンジ！！
+ * 
+ * Scanner sc = new Scanner(System.in); int p = Integer.parseInt(sc.next()); int
+ * m = Integer.parseInt(sc.next());
+ * 
+ * makePM(p, m); } }
+ */
