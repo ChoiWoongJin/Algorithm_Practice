@@ -29,8 +29,7 @@ public class BubbleSort {
 		}
 		System.out.println();
 		
-		selectionSort(arr);
-		
+		selectionSort(arr);		
 		for(int i=0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}		
