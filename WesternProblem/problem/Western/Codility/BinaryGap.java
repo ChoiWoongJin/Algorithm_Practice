@@ -44,8 +44,4 @@ public class BinaryGap {
 }
 
 // In Binary, get 0's Num, when 0 is between 1
-<<<<<<< HEAD
 // ex) 100010000     => max = 3
-=======
-// ex) 100010000     => max = 3
->>>>>>> refs/remotes/origin/master
