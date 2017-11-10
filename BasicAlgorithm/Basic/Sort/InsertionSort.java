@@ -5,7 +5,7 @@ package Basic.Sort;
  */
 
 public class InsertionSort {
-	public static int[] selectionSort(int[] arr) {
+	public static int[] insertionSort(int[] arr) {
 		int temp = 0, tempPoint = 0;
 		for(int i=1; i < arr.length; i++) {
 			tempPoint = i;
