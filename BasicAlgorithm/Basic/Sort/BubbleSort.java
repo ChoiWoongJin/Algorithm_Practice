@@ -22,7 +22,7 @@ public class BubbleSort {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arr = {29, 10, 14, 37, 13};
+		int[] arr = {7, 6, 5, 8, 4, 11, 0, 1, 3, 2, 15, 10, 14, 37, 13};
 		
 		for(int i=0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
