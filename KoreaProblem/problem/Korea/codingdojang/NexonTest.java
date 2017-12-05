@@ -23,8 +23,8 @@ public class NexonTest {
 			selfNumber[i] = 0;
 		} // 셀프 넘버 일 경우 0으로 남도록 한다
 		
-		for(i=0; i<input; i++) {
-			num_i = i+1;
+		for(i=1; i<=input; i++) {
+			num_i = i;
 			generatorCheck = num_i; // 제너레이터를 통해 만들어지는 숫자를 저장. 최초로 자신을 더하도록 한다
 			while(num_i != 0) { // 각 자릿수를 더하도록 한다
 				generatorCheck += num_i%10;
